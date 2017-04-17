@@ -1,9 +1,32 @@
 var express = require('express');
+var request = require('request');
+var conf = require('config');
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send("Foobar");
+    res.send({"message": "Post requests only please"});
 });
+
+let server =    conf.get('server');
+let endpoint =  conf.get('endpoint');
+let token =     conf.get('token');
+
+router.post('/', function(req, res) {
+    if (req.body.status_text && req.body.status_emoji) {
+
+        let encodedBody = encodeURIComponent(JSON.stringify(req.body))
+        let url = server+endpoint+"?token="+token+"&profile="+encodedBody;
+
+        request.get(url, function(err, httpResponse, body) {
+            res.send({
+                "error": err,
+                "body": httpResponse,
+            })
+        })
+    } else {
+        res.send({error: "Invalid body sent"});
+    }
+})
 
 module.exports = router;
