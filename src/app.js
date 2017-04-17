@@ -2,6 +2,7 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var conf = require('config');
 var app = express();
 
 let status = require('./routes/status');
@@ -15,6 +16,6 @@ app.use(bodyParser.urlencoded({extended: true})); // to support URL-encoded bodi
 
 app.use('/status', status);
 
-app.listen(3000, function () {
-    console.log('Listening at localhost:3000');
+app.listen(conf.get('port'), function () {
+    console.log('Listening at localhost:'+conf.get('port'));
 })
