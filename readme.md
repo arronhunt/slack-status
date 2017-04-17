@@ -1,5 +1,5 @@
 # About
-This is a simple express web server that allows you to interface with the Slack status API from IFTTT. The reason that you need this middleman service is because IFTTT does not play well with url encoded JSON in POST requests. Hopefully Slack will make this repo obsolete by publishing their own IFTTT integration.
+This is a simple express web server that allows you to interface with the Slack status API from IFTTT. The reason that you need this service is because IFTTT does not play well with url encoded JSON in POST requests. Hopefully Slack will make this repo obsolete by publishing their own IFTTT integration.
 
 ## Step 1. Get a Slack token
 
@@ -32,7 +32,7 @@ To update your status, make a POST request to the server with the following raw 
 }
 ```
 
-## 4. Use with IFTTT
+## Step 4. Use with IFTTT
 
 1. Create a new applet https://ifttt.com/create
 2. Select a service as your "if" trigger.
