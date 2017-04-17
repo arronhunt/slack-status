@@ -13,10 +13,10 @@ let endpoint =  conf.get('endpoint');
 
 router.post('/', function(req, res) {
 
-    if (req.headers['token']) {
+    if (req.body.token) {
         if (req.body.status_text && req.body.status_emoji) {
 
-            let token = req.headers['token'];
+            let token = req.body.token;
             let encodedBody = encodeURIComponent(JSON.stringify(req.body))
             let url = server+endpoint+"?token="+token+"&profile="+encodedBody;
 
