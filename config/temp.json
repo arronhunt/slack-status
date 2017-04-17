@@ -1,6 +1,0 @@
-{
-    "port": 3000,
-    "server": "http://slack.com/api/",
-    "endpoint": "users.profile.set",
-    "token": "YOUR_TOKEN_HERE"
-}
