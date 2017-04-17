@@ -21,7 +21,7 @@ router.post('/', function(req, res) {
         request.get(url, function(err, httpResponse, body) {
             res.send({
                 "error": err,
-                "body": httpResponse,
+                "body": JSON.parse(body),
             })
         })
     } else {
