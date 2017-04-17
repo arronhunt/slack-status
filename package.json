@@ -4,8 +4,7 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/app.js"
+    "start": "forever start ./src/app.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +12,7 @@
     "body-parser": "^1.17.1",
     "config": "^1.25.1",
     "express": "^4.15.2",
+    "forever": "^0.15.3",
     "nodemon": "^1.11.0",
     "request": "^2.81.0"
   }
