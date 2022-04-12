@@ -12,7 +12,7 @@
     "body-parser": "^1.17.1",
     "config": "^1.25.1",
     "express": "^4.15.2",
-    "forever": "^0.15.3",
+    "forever": "^4.0.0",
     "nodemon": "^1.11.0",
     "request": "^2.81.0"
   }
